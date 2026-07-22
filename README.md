@@ -34,6 +34,24 @@ For complete setup instructions and plugin configuration, see [argocd-config](ht
 
 For the application pattern that uses this plugin, see [argocd-applicationset-pattern](https://github.com/arturo-builds-infra/argocd-applicationset-pattern).
 
+## Prerequisites
+
+Building the image locally only requires Docker (with buildx for multi-platform builds) — everything else ships inside the image. Package manifests are included:
+
+- macOS, using [Homebrew](https://brew.sh/) and the `Brewfile`:
+
+  ```shell
+  brew bundle
+  ```
+
+- Arch Linux, using the `pkglist.txt` (all packages are in the official repos):
+
+  ```shell
+  grep -vE '^(#|$)' pkglist.txt | sudo pacman -S --needed -
+  ```
+
+On other operating systems, install Docker manually.
+
 ## Building the Image
 
 ```bash
